@@ -54,6 +54,15 @@ class ConvertRules extends HTMLElement {
   }
 
   listen(){
+    this.querySelector("textarea.rules").addEventListener('change', changeEvent => {
+      localStorage.rules = changeEvent.target.value
+    })
+
+    addEventListener('load', () => {
+      console.log(`hi i loaded`)
+      this.querySelector('textarea').value = localStorage.rules
+
+    })
     this.addEventListener('keyup', pasteEvent => {
       let emphemeralString = this.querySelector('textarea.ephemeral').value
       let unicodeString = this.applyRules(emphemeralString)
