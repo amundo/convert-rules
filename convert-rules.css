@@ -1,0 +1,39 @@
+html, body {
+  height: 100vh;
+  margin:0;
+  padding:1em;
+  overflow-y: scroll;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(71, 112, 33);
+}
+
+convert-rules {
+  height: 100%;;
+  display: grid;
+
+  grid-template: 
+    "rules      rules" 20%
+    "ephemeral output" 1fr
+  /  1fr       1fr;
+  gap: 1em;
+}
+
+convert-rules textarea.rules {
+  grid-area: rules;
+}
+
+
+convert-rules textarea.ephemeral {
+  grid-area: ephemeral;
+}
+
+convert-rules textarea.output {
+  grid-area: output;
+  background: white;
+}
